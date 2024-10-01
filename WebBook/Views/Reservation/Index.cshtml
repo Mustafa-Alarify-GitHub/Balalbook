@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebBook.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divFull">
+    <h1 id="title">الحجوزات</h1>
+    <table id="table">
+        <thead style="border: 1px solid white;">
+            <tr>
+                <td> #  </td>
+                <td>اسم الكتاب </td>
+                <td>من تاريخ</td>
+                <td> الى تاريخ </td>
+                <td>  العمليات</td>
+            </tr>
+            <tr>
+                <td colspan="5"><hr style="margin: 10px 0;"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+
+                    <td>@ViewBag.Books[item.Book_Id]</td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date_from_star)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date_to_end)
+                    </td>
+                    <td>
+                        <button id="btnEventD">
+                            @Html.ActionLink("حذف", "Delete", new { id = item.Id })
+                        </button>
+                        <button id="btnEventU">
+                            @Html.ActionLink("تعديل", "Edit", new { id = item.Id })
+                        </button>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

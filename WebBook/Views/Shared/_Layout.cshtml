@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebBook</title>
+
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <a asp-area="" asp-controller="Reservation" asp-action="Index" id="linkNav">الحجوزات</a>
+            <a asp-area="" asp-controller="Reservation" asp-action="Create" id="linkNav">اضافة حجز</a>
+            <a asp-area="" asp-controller="Book" asp-action="Create" id="linkNav">كتب</a>
+            <a asp-area="" asp-controller="Book" asp-action="Index" id="linkNav">المكتبه</a>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

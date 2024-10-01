@@ -1,0 +1,56 @@
+﻿@model WebBook.Models.Book
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divFull">
+    <h1 id="title">الكتب CRUD</h1>
+    <form id="form" asp-action="Create">
+
+        <label for="" asp-for="Book_Name">اسم الكتاب</label>
+        <input type="text" asp-for="Book_Name">
+
+        <label for="" asp-for="Blender_Name">اسم المؤلف</label>
+        <input type="text" asp-for="Blender_Name">
+
+        <label for="" asp-for="Version">الاصدار</label>
+        <input type="text" asp-for="Version">
+        <input type="submit" value="Create" id="BtnAdd" />
+
+    </form>
+@*      <table id="table">
+         <thead style="border: 1px solid white;">
+             <tr>
+                 <td>#</td>
+                 <td>اسم الكتاب</td>
+                 <td>اسم المؤلف</td>
+                 <td>الاصدار</td>
+                 <td>عمليات</td>
+             </tr>
+             <tr>
+                 <td colspan="4"><hr style="margin: 10px 0;"></td>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>1</td>
+                 <td>اسم الكتاب</td>
+                 <td>اسم المؤلف</td>
+                 <td>الاصدار</td>
+                 <td>
+                     <button id="btnEventD">حذف</button>
+                     <button id="btnEventU">تعديل</button>
+                 </td>
+             </tr>
+
+         </tbody>
+     </table> *@
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

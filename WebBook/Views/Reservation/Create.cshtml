@@ -1,0 +1,29 @@
+﻿@model WebBook.Models.Reservation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divFull">
+    <h1 id="title">اضافة حجز</h1>
+    <form id="form" asp-action="Create">
+
+        <label for="" asp-for="Book_Id">اسم الكتاب</label>
+        <select asp-for="Book_Id" class="form-control" asp-items="ViewBag.Books"></select>
+
+        <label for="" asp-for="date_from_star">من تاريخ</label>
+        <input type="date" asp-for="date_from_star">
+
+        <label for="" asp-for="date_to_end">الى تاريخ</label>
+        <input type="date" asp-for="date_to_end">
+        <input type="submit" value="Create" id="BtnAdd" />
+
+    </form>
+ 
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
